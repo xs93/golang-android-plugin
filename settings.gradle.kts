@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage")
-
 rootProject.name = "golang-android-plugin"
 
 include("gradle-plugin")
@@ -16,7 +14,7 @@ pluginManagement {
 dependencyResolutionManagement {
     versionCatalogs {
         create("deps") {
-            val agp = "7.1.0"
+            val agp = "8.1.1"
             val lombok = "6.4.1"
 
             library("android-gradle", "com.android.tools.build:gradle:$agp")

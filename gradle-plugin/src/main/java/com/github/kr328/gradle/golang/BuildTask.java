@@ -44,28 +44,27 @@ public abstract class BuildTask extends DefaultTask {
         final String goArch;
         final String goArm;
         switch (abi) {
-            case "arm64-v8a":
+            case "arm64-v8a" -> {
                 compilerPrefix = "aarch64-linux-android";
                 goArch = "arm64";
                 goArm = "";
-                break;
-            case "armeabi-v7a":
+            }
+            case "armeabi-v7a" -> {
                 compilerPrefix = "armv7a-linux-androideabi";
                 goArch = "arm";
                 goArm = "7";
-                break;
-            case "x86":
+            }
+            case "x86" -> {
                 compilerPrefix = "i686-linux-android";
                 goArch = "386";
                 goArm = "";
-                break;
-            case "x86_64":
+            }
+            case "x86_64" -> {
                 compilerPrefix = "x86_64-linux-android";
                 goArch = "amd64";
                 goArm = "";
-                break;
-            default:
-                throw new IllegalArgumentException("Unsupported abi: " + abi);
+            }
+            default -> throw new IllegalArgumentException("Unsupported abi: " + abi);
         }
 
         toolchainsRoot.add(compilerPrefix + sdkVersion + "-clang");

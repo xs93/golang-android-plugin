@@ -50,8 +50,7 @@ subprojects {
                 mavenLocal()
                 maven {
                     name = "kr328app"
-                    url = uri("https://maven.kr328.app/releases")
-                    credentials(PasswordCredentials::class.java)
+                    url = uri("../repo")
                 }
             }
         }
